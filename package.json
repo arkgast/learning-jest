@@ -1,0 +1,59 @@
+{
+  "name": "testing-react-with-jest",
+  "version": "1.0.0",
+  "description": "Learn how to test react",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "webpack-dev-server",
+    "test": "jest"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(css)": "<rootDir>/test/__mock__/styleMock.js",
+      "\\.(jpg|jpeg|png|gif|eot|otf|svg|ttf|woff|woff2)$": "<rootDir>/test/__mocks__/fileTransformer.js"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arkgast/testing-react-with-jest"
+  },
+  "keywords": [
+    "react",
+    "redux",
+    "jest"
+  ],
+  "author": "Arnold Gandarillas Castillo <arkgast@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/arkgast/testing-react-with-jest/issues"
+  },
+  "homepage": "https://github.com/arkgast/testing-react-with-jest#readme",
+  "dependencies": {
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^0.28.7",
+    "enzyme": "^2.9.1",
+    "eslint": "^4.7.2",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-config-standard-jsx": "^4.0.2",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-node": "^5.1.1",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-react": "^7.3.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "jest": "^21.1.0",
+    "react-hot-loader": "^3.0.0-beta.7",
+    "react-test-renderer": "^15.6.1",
+    "style-loader": "^0.18.2",
+    "stylelint": "^8.1.1",
+    "stylelint-config-standard": "^17.0.0",
+    "webpack": "^3.6.0",
+    "webpack-dev-server": "^2.8.2"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "rules": {
+    no-multiple-empty-lines: ["error", {"max": 2}]
+  },
+  "extends": ["standard", "standard-jsx"],
+  "env": {
+    jest: true
+  }
+}
