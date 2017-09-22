@@ -1,6 +1,6 @@
 {
   "name": "testing-react-with-jest",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Learn how to test react",
   "main": "src/index.js",
   "scripts": {
