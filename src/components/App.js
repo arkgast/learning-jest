@@ -1,6 +1,10 @@
 import React from 'react'
+import CommentBox from './CommentBox'
 
 
 export default () => (
-  <h1>React rocks!</h1>
+  <div>
+    <h1>React rocks!</h1>
+    <CommentBox />
+  </div>
 )
