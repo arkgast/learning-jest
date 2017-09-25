@@ -1,12 +1,21 @@
 import React from 'react'
-import { shallow } from 'enzyme'
+
+import { Provider } from 'react-redux'
+import { createStore } from 'redux'
+import { mount } from 'enzyme'
+
 import CommentBox from '../../src/components/CommentBox.js'
+import reducers from '../../src/reducers'
 
 
 describe('CommentBox', () => {
   let wrapper
   beforeEach(() => {
-    wrapper = shallow(<CommentBox />)
+    wrapper = mount(
+      <Provider store={createStore(reducers)}>
+        <CommentBox />
+      </Provider>
+    )
   })
 
   it('has a text area', () => {
