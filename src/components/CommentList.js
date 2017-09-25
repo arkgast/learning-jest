@@ -1,7 +1,8 @@
 import React from 'react'
+import { connect } from 'react-redux'
 
 
-export default (props) => {
+const CommentList = (props) => {
   const getList = () => {
     if (props.list.length === 0) {
       return (
@@ -16,3 +17,12 @@ export default (props) => {
     <ul>{getList()}</ul>
   )
 }
+
+const mapStateToProps = (state) => {
+  return {
+    list: state.comments
+  }
+}
+
+
+export default connect(mapStateToProps, null)(CommentList)
