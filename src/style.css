@@ -5,3 +5,28 @@ body {
 h1 {
   text-align: center;
 }
+
+.content-wrapper {
+  border-radius: 5px;
+  box-shadow: 2px 0 2px #000;
+  margin: 2em auto 0;
+  padding: 0.5em;
+  width: 300px;
+}
+
+.comment-box {
+  padding: 1em;
+}
+
+.comment-box textarea {
+  border: 1px solid #000;
+  border-radius: 5px;
+  width: calc(100% - 2px);
+  max-height: 300px;
+  max-height: 100px;
+}
+
+.button-wrapper {
+  padding: 0.5em 0;
+  text-align: center;
+}

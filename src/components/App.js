@@ -4,7 +4,7 @@ import CommentList from './CommentList'
 
 
 export default () => (
-  <div>
+  <div className='content-wrapper'>
     <h1>React rocks!</h1>
     <CommentBox />
     <CommentList list={[]} />
