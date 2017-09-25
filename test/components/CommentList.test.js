@@ -4,14 +4,10 @@ import CommentList from '../../src/components/CommentList'
 
 describe('CommentList', () => {
   it('shows all comments', () => {
-    const list = [
-      { id: 1, comment: 'new comment 1' },
-      { id: 2, comment: 'new comment 2' },
-      { id: 3, comment: 'new comment 3' }
-    ]
-    const wrapper = renderComponent(CommentList, {comments: list})
-    list.forEach(item => {
-      expect(wrapper.find(`li[data-id='${item.id}']`).text()).toEqual(item.comment)
+    const comments = [ 'New comment', 'Another comment' ]
+    const wrapper = renderComponent(CommentList, {comments})
+    comments.forEach((comment, i) => {
+      expect(wrapper.find(`li[data-id='${i}']`).text()).toEqual(comment)
     })
   })
 

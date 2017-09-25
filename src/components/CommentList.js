@@ -4,13 +4,13 @@ import { connect } from 'react-redux'
 
 const CommentList = (props) => {
   const getList = () => {
-    if (props.list.length === 0) {
+    if (props.comments.length === 0) {
       return (
         <li>There is no comments yet</li>
       )
     }
-    return props.list.map(item => (
-      <li key={item.id} data-id={`${item.id}`}>{item.comment}</li>
+    return props.comments.map((comment, i) => (
+      <li key={i} data-id={`${i}`}>{comment}</li>
     ))
   }
   return (
@@ -19,8 +19,9 @@ const CommentList = (props) => {
 }
 
 const mapStateToProps = (state) => {
+  const { comments } = state
   return {
-    list: state.comments
+    comments
   }
 }
 
