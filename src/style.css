@@ -6,9 +6,26 @@ h1 {
   text-align: center;
 }
 
+nav ul {
+  list-style: none;
+  padding: 1em;
+  background-color: brown;
+  text-align: center;
+}
+
+nav ul li {
+  padding: 0.5em;
+  display: inline-block;
+}
+
+nav li a {
+  text-decoration: none;
+  color: white;
+}
+
 .content-wrapper {
   border-radius: 5px;
-  box-shadow: 2px 0 2px #000;
+  background-color: steelblue;
   margin: 2em auto 0;
   padding: 0.5em;
   width: 300px;

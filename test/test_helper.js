@@ -3,6 +3,7 @@ import React from 'react'
 import { mount } from 'enzyme'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
+import { BrowserRouter as Router } from 'react-router-dom'
 
 import reducers from '../src/reducers'
 
@@ -21,7 +22,9 @@ import reducers from '../src/reducers'
 export const renderComponent = (Component, state = {}, props = {}) => {
   return mount(
     <Provider store={createStore(reducers, state)}>
-      <Component {...props} />
+      <Router>
+        <Component {...props} />
+      </Router>
     </Provider>
   )
 }

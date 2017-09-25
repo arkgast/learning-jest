@@ -1,12 +1,18 @@
 import React from 'react'
-import CommentBox from './CommentBox'
-import CommentList from './CommentList'
+import { Route } from 'react-router-dom'
+
+import Header from './Header'
+import Home from './Home'
+import Comment from './Comment'
 
 
 export default () => (
-  <div className='content-wrapper'>
+  <div>
     <h1>React rocks!</h1>
-    <CommentBox />
-    <CommentList list={[]} />
+    <Header />
+    <div className='content-wrapper'>
+      <Route path='/' exact component={Home} />
+      <Route path='/comments' component={Comment} />
+    </div>
   </div>
 )
