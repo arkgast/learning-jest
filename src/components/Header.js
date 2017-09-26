@@ -1,10 +1,23 @@
 import React, { Component } from 'react'
+
 import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
+
+import * as actions from '../actions'
 
 
-export default class Header extends Component {
-  authItem () {
-    return <li><button>Sign in</button></li>
+class Header extends Component {
+  authButton () {
+    const { authenticated } = this.props
+    let btnText = 'Sign in'
+    if (authenticated) {
+      btnText = 'Sign out'
+    }
+    return <button
+      onClick={() => this.props.authenticate(!authenticated)}
+    >
+      {btnText}
+    </button>
   }
   render () {
     return (
@@ -12,9 +25,19 @@ export default class Header extends Component {
         <ul>
           <li><Link to='/'>Home</Link></li>
           <li><Link to='/comments'>Comments</Link></li>
-          {this.authItem()}
+          <li>{this.authButton()}</li>
         </ul>
       </nav>
     )
   }
 }
+
+const mapStateToProps = (state) => {
+  const { authenticated } = state
+  return {
+    authenticated
+  }
+}
+
+
+export default connect(mapStateToProps, actions)(Header)

@@ -1,5 +1,5 @@
 import { SAVE_COMMET, CHANGE_AUTH } from '../../src/actions/types'
-import { saveComment, changeAuth } from '../../src/actions'
+import { saveComment, authenticate } from '../../src/actions'
 
 
 describe('actions', () => {
@@ -21,7 +21,7 @@ describe('actions', () => {
   describe('changeAuth', () => {
     let action
     beforeEach(() => {
-      action = changeAuth(true)
+      action = authenticate(true)
     })
 
     it('has the correct type', () => {

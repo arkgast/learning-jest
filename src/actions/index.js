@@ -8,7 +8,7 @@ export const saveComment = (comment) => {
   }
 }
 
-export const changeAuth = (state) => {
+export const authenticate = (state) => {
   return {
     type: CHANGE_AUTH,
     payload: state
