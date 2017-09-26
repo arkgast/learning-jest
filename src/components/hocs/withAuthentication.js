@@ -15,8 +15,9 @@ export default (ComposedComponent) => {
       }
     }
     render () {
+      const { authenticated, dispatch, ...props } = this.props
       return (
-        <ComposedComponent {...this.props} />
+        <ComposedComponent {...props} />
       )
     }
   }
