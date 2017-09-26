@@ -1,5 +1,5 @@
-import { SAVE_COMMET } from '../../src/actions/types'
-import { saveComment } from '../../src/actions'
+import { SAVE_COMMET, CHANGE_AUTH } from '../../src/actions/types'
+import { saveComment, changeAuth } from '../../src/actions'
 
 
 describe('actions', () => {
@@ -15,6 +15,21 @@ describe('actions', () => {
 
     it('has the correct payload', () => {
       expect(action.payload).toEqual('New comment')
+    })
+  })
+
+  describe('changeAuth', () => {
+    let action
+    beforeEach(() => {
+      action = changeAuth(true)
+    })
+
+    it('has the correct type', () => {
+      expect(action.type).toEqual(CHANGE_AUTH)
+    })
+
+    it('has the correct payload', () => {
+      expect(action.payload).toBeTruthy()
     })
   })
 })
