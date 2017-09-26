@@ -1,5 +1,4 @@
 import React from 'react'
-import { connect } from 'react-redux'
 
 
 const CommentList = (props) => {
@@ -18,12 +17,5 @@ const CommentList = (props) => {
   )
 }
 
-const mapStateToProps = (state) => {
-  const { comments } = state
-  return {
-    comments
-  }
-}
 
-
-export default connect(mapStateToProps, null)(CommentList)
+export default CommentList

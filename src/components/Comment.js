@@ -1,10 +1,17 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
+import withAuthentication from './hocs/withAuthentication'
 import CommentBox from './CommentBox'
 import CommentList from './CommentList'
 
 
+/**
+ * This component is wrapped by withAuthentication hoc
+ * because is necessary to be authenticated to it's content
+ *
+ * @extends {Component}
+ */
 class Comment extends Component {
   render () {
     return (
@@ -23,4 +30,6 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps, null)(Comment)
+
+const App = withAuthentication(Comment)
+export default connect(mapStateToProps, null)(App)
