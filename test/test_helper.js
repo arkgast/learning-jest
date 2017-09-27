@@ -8,6 +8,7 @@ import { BrowserRouter as Router } from 'react-router-dom'
 import reducers from '../src/reducers'
 
 
+export let store
 /**
  * Helper to test components that need the redux provider
  * 
@@ -20,8 +21,9 @@ import reducers from '../src/reducers'
  * @returns {reactElement} The Component wrapped in a Provider container
  */
 export const renderComponent = (Component, state = {}, props = {}) => {
+  store = createStore(reducers, state)
   return mount(
-    <Provider store={createStore(reducers, state)}>
+    <Provider store={store}>
       <Router>
         <Component {...props} />
       </Router>
