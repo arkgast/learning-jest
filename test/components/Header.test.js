@@ -9,8 +9,9 @@ describe('<Header />', () => {
   })
 
   it('shows all LI', () => {
-    // The number of items are 3 right now, Home - Comments - Sign in | out
-    expect(wrapper.find('li').length).toBe(3)
+    // The number of items are 3 right now
+    // Home - Users - Comments - Sign in | out
+    expect(wrapper.find('li').length).toBe(4)
   })
 
   describe('Button text', () => {

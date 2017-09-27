@@ -39,7 +39,7 @@ describe('actions', () => {
       action = fetchUsers()
     })
 
-    // Right now the action 'fetchUsers' is return a fake user list
+    // Right now the action 'fetchUsers' is returning a fake user list
     it('should fetch users', () => {
       const expectedAction = {
         type: FETCH_USERS,
