@@ -1,5 +1,5 @@
-import { SAVE_COMMET, CHANGE_AUTH } from '../../src/actions/types'
-import { saveComment, authenticate } from '../../src/actions'
+import { SAVE_COMMET, CHANGE_AUTH, FETCH_USERS } from '../../src/actions/types'
+import { saveComment, authenticate, fetchUsers } from '../../src/actions'
 
 
 describe('actions', () => {
@@ -30,6 +30,25 @@ describe('actions', () => {
 
     it('has the correct payload', () => {
       expect(action.payload).toBeTruthy()
+    })
+  })
+
+  describe('fetchUsers', () => {
+    let action
+    beforeEach(() => {
+      action = fetchUsers()
+    })
+
+    // Right now the action 'fetchUsers' is return a fake user list
+    it('should fetch users', () => {
+      const expectedAction = {
+        type: FETCH_USERS,
+        payload: [
+          { name: 'Ana' },
+          { name: 'Noemi' }
+        ]
+      }
+      expect(action).toEqual(expectedAction)
     })
   })
 })

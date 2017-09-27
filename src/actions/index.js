@@ -1,4 +1,8 @@
-import { SAVE_COMMET, CHANGE_AUTH } from './types'
+import {
+  SAVE_COMMET,
+  CHANGE_AUTH,
+  FETCH_USERS
+} from './types'
 
 
 export const saveComment = (comment) => {
@@ -12,5 +16,15 @@ export const authenticate = (state) => {
   return {
     type: CHANGE_AUTH,
     payload: state
+  }
+}
+
+export const fetchUsers = () => {
+  return {
+    type: FETCH_USERS,
+    payload: [
+      { name: 'Ana' },
+      { name: 'Noemi' }
+    ]
   }
 }
