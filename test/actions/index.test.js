@@ -1,3 +1,4 @@
+import axios from 'axios'
 import { SAVE_COMMET, CHANGE_AUTH, FETCH_USERS } from '../../src/actions/types'
 import { saveComment, authenticate, fetchUsers } from '../../src/actions'
 
@@ -34,21 +35,20 @@ describe('actions', () => {
   })
 
   describe('fetchUsers', () => {
-    let action
-    beforeEach(() => {
-      action = fetchUsers()
-    })
-
     // Right now the action 'fetchUsers' is returning a fake user list
-    it('should fetch users', () => {
-      const expectedAction = {
+    it('should fetch users', async () => {
+      const expectedValue = {
         type: FETCH_USERS,
         payload: [
-          { name: 'Ana' },
-          { name: 'Noemi' }
+          { id: '1', name: 'Ana', email: 'ana@email.com' },
+          { id: '2', name: 'Noemi', email: 'noemi@email.com' }
         ]
       }
-      expect(action).toEqual(expectedAction)
+      axios.get = jest.fn(() => {
+        return expectedValue.payload
+      })
+      const users = await fetchUsers()
+      expect(users).toEqual(expectedValue)
     })
   })
 })

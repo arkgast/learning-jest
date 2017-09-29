@@ -1,15 +1,18 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import * as actions from '../actions'
+import { fetchUsers } from '../actions'
 
 
 class UserList extends Component {
-  renderUser (user, i) {
+  componentDidMount () {
+    this.props.fetchUsers()
+  }
+  renderUser (user) {
     return (
-      <div key={`user-${i}`} className='user'>
+      <div key={user.id} className='user'>
         <h3>{user.name}</h3>
-        <p>Super enterprise</p>
-        <button>hi!</button>
+        <p>{user.email}</p>
+        <button>Delete</button>
       </div>
     )
   }
@@ -39,4 +42,7 @@ const mapStateToProps = (state) => {
 }
 
 
-export default connect(mapStateToProps, actions)(UserList)
+export {
+  UserList
+}
+export default connect(mapStateToProps, {fetchUsers})(UserList)

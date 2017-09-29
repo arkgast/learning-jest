@@ -1,3 +1,4 @@
+import axios from 'axios'
 import {
   SAVE_COMMET,
   CHANGE_AUTH,
@@ -20,11 +21,10 @@ export const authenticate = (state) => {
 }
 
 export const fetchUsers = () => {
+  const request = axios.get('https://jsonplaceholder.typicode.com/users')
+
   return {
     type: FETCH_USERS,
-    payload: [
-      { name: 'Ana' },
-      { name: 'Noemi' }
-    ]
+    payload: request
   }
 }

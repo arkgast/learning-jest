@@ -8,14 +8,15 @@ describe('Users reducer', () => {
   })
 
   it('handles action of type FETCH_USERS', () => {
-    const users = [
-      { name: 'Ana' },
-      { name: 'Noemi' }
-    ]
     const action = {
       type: types.FETCH_USERS,
-      payload: users
+      payload: {
+        data: [
+          { id: '1', name: 'Ana', email: 'ana@email.com' },
+          { id: '2', name: 'Noemi', email: 'noemi@email.com' }
+        ]
+      }
     }
-    expect(usersReducer([], action)).toEqual(users)
+    expect(usersReducer(undefined, action)).toEqual(action.payload.data)
   })
 })
