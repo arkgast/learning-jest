@@ -15,7 +15,7 @@ import CommentList from './CommentList'
 class Comment extends Component {
   render () {
     return (
-      <div>
+      <div className='comment-container'>
         <CommentBox />
         <CommentList comments={this.props.comments} />
       </div>

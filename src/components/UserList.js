@@ -12,7 +12,6 @@ class UserList extends Component {
       <div key={user.id} className='user'>
         <h3>{user.name}</h3>
         <p>{user.email}</p>
-        <button>Delete</button>
       </div>
     )
   }
@@ -29,7 +28,7 @@ class UserList extends Component {
   }
   render () {
     return (
-      <div>
+      <div className='user-container'>
         {this.renderUsers()}
       </div>
     )
